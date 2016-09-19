@@ -2,7 +2,7 @@
 
     define('API_KEY', 'MY_ID_KEY');
     define('SECRET_KEY', 'MY_SECRET_KEY');
-    $Sig = base64_encode(hash_hmac('sha256', 'date: "'.date('r').'"', SECRET_KEY, true));
+    $Sig = base64_encode(hash_hmac('sha256', 'date: "'.gmdate('D, d M Y H:i:s T').'"', SECRET_KEY, true));
 
     $result = '';
 
@@ -12,7 +12,7 @@
         'Cache-Control: no-cache',
         'Content-Type: application/json; charset=utf-8',
         'Host: localhost:8000',
-        'Date: "'.date('r').'"',
+        'Date: "'.gmdate('D, d M Y H:i:s T').'"',
         'X-Api-Key: '.API_KEY,
         'Authorization: Signature keyId="'.API_KEY.'",algorithm="hmac-sha256",headers="date",signature="'.$Sig.'"'
     ];
