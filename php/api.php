@@ -11,7 +11,7 @@
         'Accept-Encoding: gzip, deflate',
         'Cache-Control: no-cache',
         'Content-Type: application/json; charset=utf-8',
-        'Host: http://localhost:8000',
+        'Host: localhost:8000',
         'Date: "'.date('r').'"',
         'X-Api-Key: '.API_KEY,
         'Authorization: Signature keyId="'.API_KEY.'",algorithm="hmac-sha256",headers="date",signature="'.$Sig.'"'
